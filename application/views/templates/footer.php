@@ -82,7 +82,7 @@
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="<?= base_url('assets/templates/') ?>assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="<?= base_url('assets/templates/') ?>assets/vendor/php-email-form/validate.js"></script> -->
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/venobox/venobox.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/counterup/counterup.min.js"></script>
