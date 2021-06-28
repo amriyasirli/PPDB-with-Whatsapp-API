@@ -79,7 +79,8 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="<?= base_url('assets/templates/') ?>assets/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <!-- <script src="<?= base_url('assets/templates/') ?>assets/vendor/php-email-form/validate.js"></script> -->
@@ -88,10 +89,73 @@
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/counterup/counterup.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="<?= base_url('assets/templates/') ?>assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-
+  <!-- DataTable -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
   <!-- Template Main JS File -->
   <script src="<?= base_url('assets/templates/') ?>assets/js/main.js"></script>
 
+
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable( {
+        autoWidth: false,
+        columnDefs: [
+            {
+                targets: ['_all'],
+                className: 'mdc-data-table__cell'
+            }
+        ]
+    } );
+} );
+</script>
+
+  <script>
+    $(document).ready(function(){
+        $("#sekolah_provinsi").change(function (){
+            var url = "<?php echo site_url('wilayah/add_ajax_kab');?>/"+$(this).val();
+            $('#sekolah_kabupaten').load(url);
+            return false;
+        })
+
+        $("#sekolah_kabupaten").change(function (){
+            var url = "<?php echo site_url('wilayah/add_ajax_kec');?>/"+$(this).val();
+            $('#sekolah_kecamatan').load(url);
+            return false;
+        })
+
+        $("#sekolah_kecamatan").change(function (){
+            var url = "<?php echo site_url('wilayah/add_ajax_des');?>/"+$(this).val();
+            $('#sekolah_desa').load(url);
+            return false;
+        })
+    });
+</script>
+
+<!-- Alamat Sekolah -->
+<script>
+    $(document).ready(function(){
+        $("#provinsi").change(function (){
+            var url = "<?php echo site_url('wilayah/add_ajax_kab');?>/"+$(this).val();
+            $('#kabupaten').load(url);
+            return false;
+        })
+
+        $("#kabupaten").change(function (){
+            var url = "<?php echo site_url('wilayah/add_ajax_kec');?>/"+$(this).val();
+            $('#kecamatan').load(url);
+            return false;
+        })
+
+        $("#kecamatan").change(function (){
+            var url = "<?php echo site_url('wilayah/add_ajax_des');?>/"+$(this).val();
+            $('#desa').load(url);
+            return false;
+        })
+    });
+</script>
 </body>
 
 </html>
